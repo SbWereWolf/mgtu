@@ -11,7 +11,7 @@
 }
 
 $("#userId").change(function () {
-    console.info("hit");
+    const id = $("#userId").val();
 });
 
 app.addViewModel({
