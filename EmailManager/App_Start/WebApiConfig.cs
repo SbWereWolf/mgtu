@@ -19,6 +19,10 @@ namespace EmailManager
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}"
             );
+            config.Routes.MapHttpRoute(
+                name: "NoId",
+                routeTemplate: "api/{controller}"
+            );
         }
     }
 }

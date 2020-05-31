@@ -8,14 +8,17 @@
     <h2>Выберите пользователя</h2>
     @if (Model != null)
     {
-        @Html.DropDownListFor(
-                      model => model.SelectedId,
-                      new SelectList(Model.Users, "Id", "Name"),
-                      "Пользователь не выбран",
-                      new { @class = "form-control", id = "userId" });
+        @Html.DropDownListFor(model => model.SelectedId, new SelectList(Model.Users, "Id", "Name"), "Пользователь не выбран", new { @class = "form-control", id = "userId" })
     }
 </div>
 <div class="row">
     <h2>Адреса электронной почты:</h2>
     <div id="user-emails-list"></div>
+</div>
+<div class="row">
+    <h2>Добавить почту</h2>
+    <p>
+        <label>Электронный адрес <input type="email" placeholder="email" required="true" class="form-control" id="email" /></label>
+        <input type="submit" value="Добавить" id="submit-email"/>
+    </p>
 </div>
