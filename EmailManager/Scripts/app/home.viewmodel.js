@@ -11,8 +11,29 @@
 }
 
 $("#userId").change(function () {
+    
     const id = $("#userId").val();
+
+    window.fetch(`/api/user/${id}`)
+        .then(response => response.json())
+        .then(data => printEmails(data))
+        .catch(() => {
+            console.error("⛔");
+            printEmails([]);
+        });
 });
+
+function printEmails(emailsList) {
+
+    const list = $("<ol>");
+
+    emailsList.forEach(function(value) {
+        list.append($("<li>").text(value));
+    });
+
+    const target = $("#user-emails-list");
+    target.html(list);
+}
 
 app.addViewModel({
     name: "Home",
