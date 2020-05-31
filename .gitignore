@@ -187,6 +187,7 @@ UpgradeLog*.htm
 
 # SQL Server files
 *.mdf
+!EmailManager/App_Data/Database1.mdf
 *.ldf
 
 # Business Intelligence projects

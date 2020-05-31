@@ -1,10 +1,22 @@
-﻿<!-- ko with: home -->
+﻿@model EmailManager.Models.UserList
+<!-- ko with: home -->
 <div class="jumbotron">
     <h1>Email Managment</h1>
     <p class="lead">Choose user to browse his emails addresses.</p>
 </div>
 <div class="row">
-    <p>Some text here.</p>
+    <p>Выберите пользователя</p>
+    @if (Model != null)
+    {
+        @Html.DropDownListFor(
+            model => model.SelectedId, 
+            new SelectList(Model.Users, "Id", "Name"), 
+            "Пользователь не выбран", 
+            new { @class = "form-control", id = "userId" });
+    }
+</div>
+<div id="user-emails-list">
+    
 </div>
 
 <!-- /ko -->
